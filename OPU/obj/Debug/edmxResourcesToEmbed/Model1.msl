@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OPUBaseModelStoreContainer" CdmEntityContainer="OPUBaseEntities">
+    <EntitySetMapping Name="AddressList">
+      <EntityTypeMapping TypeName="OPUBaseModel.AddressList">
+        <MappingFragment StoreEntitySet="AddressList">
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="IsAltName" ColumnName="IsAltName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="www" ColumnName="www" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CardList">
+      <EntityTypeMapping TypeName="OPUBaseModel.CardList">
+        <MappingFragment StoreEntitySet="CardList">
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="ControlCode" ColumnName="ControlCode" />
+          <ScalarProperty Name="WorkCode" ColumnName="WorkCode" />
+          <ScalarProperty Name="WorkContents" ColumnName="WorkContents" />
+          <ScalarProperty Name="PunktNo" ColumnName="PunktNo" />
+          <ScalarProperty Name="WorkEndDate" ColumnName="WorkEndDate" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="StateCodeUser" ColumnName="StateCodeUser" />
+          <ScalarProperty Name="ArgumentEnd" ColumnName="ArgumentEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CardState">
+      <EntityTypeMapping TypeName="OPUBaseModel.CardState">
+        <MappingFragment StoreEntitySet="CardState">
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="statename" ColumnName="statename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompaniesList">
+      <EntityTypeMapping TypeName="OPUBaseModel.CompaniesList">
+        <MappingFragment StoreEntitySet="CompaniesList">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyShortName" ColumnName="CompanyShortName" />
+          <ScalarProperty Name="Arhive_date" ColumnName="Arhive_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompleteList">
+      <EntityTypeMapping TypeName="OPUBaseModel.CompleteList">
+        <MappingFragment StoreEntitySet="CompleteList">
+          <ScalarProperty Name="Complete" ColumnName="Complete" />
+          <ScalarProperty Name="CompleteName" ColumnName="CompleteName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactsList">
+      <EntityTypeMapping TypeName="OPUBaseModel.ContactsList">
+        <MappingFragment StoreEntitySet="ContactsList">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="IsAltName" ColumnName="IsAltName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="www" ColumnName="www" />
+          <ScalarProperty Name="Arhive_date" ColumnName="Arhive_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CountriesList">
+      <EntityTypeMapping TypeName="OPUBaseModel.CountriesList">
+        <MappingFragment StoreEntitySet="CountriesList">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="IsAltName" ColumnName="IsAltName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Alpha2" ColumnName="Alpha2" />
+          <ScalarProperty Name="Alpha3" ColumnName="Alpha3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DivGroups2">
+      <EntityTypeMapping TypeName="OPUBaseModel.DivGroups2">
+        <MappingFragment StoreEntitySet="DivGroups2">
+          <ScalarProperty Name="DivID" ColumnName="DivID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DivGroupUsers">
+      <EntityTypeMapping TypeName="OPUBaseModel.DivGroupUsers">
+        <MappingFragment StoreEntitySet="DivGroupUsers">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Divisions">
+      <EntityTypeMapping TypeName="OPUBaseModel.Divisions">
+        <MappingFragment StoreEntitySet="Divisions">
+          <ScalarProperty Name="DivID" ColumnName="DivID" />
+          <ScalarProperty Name="DivName" ColumnName="DivName" />
+          <ScalarProperty Name="DivMask" ColumnName="DivMask" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocContactsList">
+      <EntityTypeMapping TypeName="OPUBaseModel.DocContactsList">
+        <MappingFragment StoreEntitySet="DocContactsList">
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocControl">
+      <EntityTypeMapping TypeName="OPUBaseModel.DocControl">
+        <MappingFragment StoreEntitySet="DocControl">
+          <ScalarProperty Name="DocControlID" ColumnName="DocControlID" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="WorkCode" ColumnName="WorkCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocList">
+      <EntityTypeMapping TypeName="OPUBaseModel.DocList">
+        <MappingFragment StoreEntitySet="DocList">
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="DocCode" ColumnName="DocCode" />
+          <ScalarProperty Name="DivID" ColumnName="DivID" />
+          <ScalarProperty Name="DocBrief" ColumnName="DocBrief" />
+          <ScalarProperty Name="DocBriefContents" ColumnName="DocBriefContents" />
+          <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+          <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Control" ColumnName="Control" />
+          <ScalarProperty Name="Adresat" ColumnName="Adresat" />
+          <ScalarProperty Name="Complete" ColumnName="Complete" />
+          <ScalarProperty Name="DocExecutor" ColumnName="DocExecutor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocListSecurityAdv">
+      <EntityTypeMapping TypeName="OPUBaseModel.DocListSecurityAdv">
+        <MappingFragment StoreEntitySet="DocListSecurityAdv">
+          <ScalarProperty Name="SecurityID" ColumnName="SecurityID" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+          <ScalarProperty Name="AccessMask" ColumnName="AccessMask" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocType">
+      <EntityTypeMapping TypeName="OPUBaseModel.DocType">
+        <MappingFragment StoreEntitySet="DocType">
+          <ScalarProperty Name="DocCode" ColumnName="DocCode" />
+          <ScalarProperty Name="DocName" ColumnName="DocName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="OPUBaseModel.dtproperties">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElDocUsersAdv">
+      <EntityTypeMapping TypeName="OPUBaseModel.ElDocUsersAdv">
+        <MappingFragment StoreEntitySet="ElDocUsersAdv">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="WorkCode" ColumnName="WorkCode" />
+          <ScalarProperty Name="UserLogin" ColumnName="UserLogin" />
+          <ScalarProperty Name="UserPassWord" ColumnName="UserPassWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElectronDocList">
+      <EntityTypeMapping TypeName="OPUBaseModel.ElectronDocList">
+        <MappingFragment StoreEntitySet="ElectronDocList">
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Document" ColumnName="Document" />
+          <ScalarProperty Name="FileDate" ColumnName="FileDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventLog">
+      <EntityTypeMapping TypeName="OPUBaseModel.EventLog">
+        <MappingFragment StoreEntitySet="EventLog">
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="EventTypeCode" ColumnName="EventTypeCode" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserLogin" ColumnName="UserLogin" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+          <ScalarProperty Name="EventMoment" ColumnName="EventMoment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventTypes">
+      <EntityTypeMapping TypeName="OPUBaseModel.EventTypes">
+        <MappingFragment StoreEntitySet="EventTypes">
+          <ScalarProperty Name="EventTypeCode" ColumnName="EventTypeCode" />
+          <ScalarProperty Name="EventTypeDescr" ColumnName="EventTypeDescr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="OPUBaseModel.Groups">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="DivID" ColumnName="DivID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailList">
+      <EntityTypeMapping TypeName="OPUBaseModel.MailList">
+        <MappingFragment StoreEntitySet="MailList">
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="DeliveryTypeID" ColumnName="DeliveryTypeID" />
+          <ScalarProperty Name="CorrNo" ColumnName="CorrNo" />
+          <ScalarProperty Name="CorrDate" ColumnName="CorrDate" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelationsDoc">
+      <EntityTypeMapping TypeName="OPUBaseModel.RelationsDoc">
+        <MappingFragment StoreEntitySet="RelationsDoc">
+          <ScalarProperty Name="Relation_ID" ColumnName="Relation_ID" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="OwnerDocID" ColumnName="OwnerDocID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Replace">
+      <EntityTypeMapping TypeName="OPUBaseModel.Replace">
+        <MappingFragment StoreEntitySet="Replace">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WorkCode" ColumnName="WorkCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResponsiblesList">
+      <EntityTypeMapping TypeName="OPUBaseModel.ResponsiblesList">
+        <MappingFragment StoreEntitySet="ResponsiblesList">
+          <ScalarProperty Name="Respond_ID" ColumnName="Respond_ID" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="WorkCode" ColumnName="WorkCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_ProgLinkHost">
+      <EntityTypeMapping TypeName="OPUBaseModel.sys_ProgLinkHost">
+        <MappingFragment StoreEntitySet="sys_ProgLinkHost">
+          <ScalarProperty Name="id_Link" ColumnName="id_Link" />
+          <ScalarProperty Name="id_Prog" ColumnName="id_Prog" />
+          <ScalarProperty Name="cHost" ColumnName="cHost" />
+          <ScalarProperty Name="dataIns" ColumnName="dataIns" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_ProgList">
+      <EntityTypeMapping TypeName="OPUBaseModel.sys_ProgList">
+        <MappingFragment StoreEntitySet="sys_ProgList">
+          <ScalarProperty Name="id_Prog" ColumnName="id_Prog" />
+          <ScalarProperty Name="ProgExe" ColumnName="ProgExe" />
+          <ScalarProperty Name="ProgVer" ColumnName="ProgVer" />
+          <ScalarProperty Name="ProgName" ColumnName="ProgName" />
+          <ScalarProperty Name="dataIns" ColumnName="dataIns" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="OPUBaseModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkList">
+      <EntityTypeMapping TypeName="OPUBaseModel.WorkList">
+        <MappingFragment StoreEntitySet="WorkList">
+          <ScalarProperty Name="WorkCode" ColumnName="WorkCode" />
+          <ScalarProperty Name="WorkName" ColumnName="WorkName" />
+          <ScalarProperty Name="RangeOrder" ColumnName="RangeOrder" />
+          <ScalarProperty Name="WorkState" ColumnName="WorkState" />
+          <ScalarProperty Name="WorkProf" ColumnName="WorkProf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_ProgLinkRole">
+      <EntityTypeMapping TypeName="OPUBaseModel.sys_ProgLinkRole">
+        <MappingFragment StoreEntitySet="sys_ProgLinkRole">
+          <ScalarProperty Name="id_Link" ColumnName="id_Link" />
+          <ScalarProperty Name="id_Prog" ColumnName="id_Prog" />
+          <ScalarProperty Name="cRole" ColumnName="cRole" />
+          <ScalarProperty Name="nLevel" ColumnName="nLevel" />
+          <ScalarProperty Name="dataIns" ColumnName="dataIns" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_ProgStartLog">
+      <EntityTypeMapping TypeName="OPUBaseModel.sys_ProgStartLog">
+        <MappingFragment StoreEntitySet="sys_ProgStartLog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userStart" ColumnName="userStart" />
+          <ScalarProperty Name="ProgExe" ColumnName="ProgExe" />
+          <ScalarProperty Name="nLevel" ColumnName="nLevel" />
+          <ScalarProperty Name="host" ColumnName="host" />
+          <ScalarProperty Name="dateStart" ColumnName="dateStart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DivGroupUsers2" TypeName="OPUBaseModel.DivGroupUsers2" StoreEntitySet="DivGroupUsers2">
+      <EndProperty Name="DivGroups2">
+        <ScalarProperty Name="DivID" ColumnName="DivID" />
+        <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+      </EndProperty>
+      <EndProperty Name="ElDocUsersAdv">
+        <ScalarProperty Name="UserID" ColumnName="UserID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="NEW_sp_Document_List_Access_Adv" FunctionName="OPUBaseModel.Store.NEW_sp_Document_List_Access_Adv">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OPUBaseModel.NEW_sp_Document_List_Access_Adv_Result">
+          <ScalarProperty Name="DocBrief" ColumnName="DocBrief" />
+          <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+          <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+          <ScalarProperty Name="DocCode" ColumnName="DocCode" />
+          <ScalarProperty Name="DocBriefContents" ColumnName="DocBriefContents" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="Control" ColumnName="Control" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Adresat" ColumnName="Adresat" />
+          <ScalarProperty Name="WorkName" ColumnName="WorkName" />
+          <ScalarProperty Name="DocExecutor" ColumnName="DocExecutor" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="CompleteName" ColumnName="CompleteName" />
+          <ScalarProperty Name="Complete" ColumnName="Complete" />
+          <ScalarProperty Name="ElDocFileName" ColumnName="ElDocFileName" />
+          <ScalarProperty Name="ElDocExists" ColumnName="ElDocExists" />
+          <ScalarProperty Name="CardExists" ColumnName="CardExists" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="DeliveryType" ColumnName="DeliveryType" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DivID" ColumnName="DivID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="OPUBaseModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="OPUBaseModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteRelationsDoc" FunctionName="OPUBaseModel.Store.sp_DeleteRelationsDoc" />
+    <FunctionImportMapping FunctionImportName="sp_Distribute_FullList" FunctionName="OPUBaseModel.Store.sp_Distribute_FullList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OPUBaseModel.sp_Distribute_FullList_Result">
+          <ScalarProperty Name="DocBrief" ColumnName="DocBrief" />
+          <ScalarProperty Name="DocBriefContents" ColumnName="DocBriefContents" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Distribute_List" FunctionName="OPUBaseModel.Store.sp_Distribute_List">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OPUBaseModel.sp_Distribute_List_Result">
+          <ScalarProperty Name="WorkCode" ColumnName="WorkCode" />
+          <ScalarProperty Name="WorkName" ColumnName="WorkName" />
+          <ScalarProperty Name="RangeOrder" ColumnName="RangeOrder" />
+          <ScalarProperty Name="WorkState" ColumnName="WorkState" />
+          <ScalarProperty Name="WorkProf" ColumnName="WorkProf" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Doc_Access_User" FunctionName="OPUBaseModel.Store.sp_Doc_Access_User" />
+    <FunctionImportMapping FunctionImportName="sp_Doc_Add_Adv" FunctionName="OPUBaseModel.Store.sp_Doc_Add_Adv" />
+    <FunctionImportMapping FunctionImportName="sp_Doc_Edit" FunctionName="OPUBaseModel.Store.sp_Doc_Edit" />
+    <FunctionImportMapping FunctionImportName="sp_Document_List_Access_Adv" FunctionName="OPUBaseModel.Store.sp_Document_List_Access_Adv" />
+    <FunctionImportMapping FunctionImportName="sp_Document_List_Access_Adv_" FunctionName="OPUBaseModel.Store.sp_Document_List_Access_Adv_" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="OPUBaseModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="OPUBaseModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OPUBaseModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="OPUBaseModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OPUBaseModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_InsertRelationsDoc" FunctionName="OPUBaseModel.Store.sp_InsertRelationsDoc" />
+    <FunctionImportMapping FunctionImportName="sp_Remember" FunctionName="OPUBaseModel.Store.sp_Remember">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OPUBaseModel.sp_Remember_Result">
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="WorkName" ColumnName="WorkName" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="WorkEndDate" ColumnName="WorkEndDate" />
+          <ScalarProperty Name="Report" ColumnName="Report" />
+          <ScalarProperty Name="ArgumentEnd" ColumnName="ArgumentEnd" />
+          <ScalarProperty Name="WorkContents" ColumnName="WorkContents" />
+          <ScalarProperty Name="DocBrief" ColumnName="DocBrief" />
+          <ScalarProperty Name="DocBriefContents" ColumnName="DocBriefContents" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Remember2" FunctionName="OPUBaseModel.Store.sp_Remember2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OPUBaseModel.sp_Remember2_Result">
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="WorkName" ColumnName="WorkName" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="WorkEndDate" ColumnName="WorkEndDate" />
+          <ScalarProperty Name="Report" ColumnName="Report" />
+          <ScalarProperty Name="ArgumentEnd" ColumnName="ArgumentEnd" />
+          <ScalarProperty Name="WorkContents" ColumnName="WorkContents" />
+          <ScalarProperty Name="DocBrief" ColumnName="DocBrief" />
+          <ScalarProperty Name="DocBriefContents" ColumnName="DocBriefContents" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="OPUBaseModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_Responsible_Add" FunctionName="OPUBaseModel.Store.sp_Responsible_Add" />
+    <FunctionImportMapping FunctionImportName="sp_Responsible_Del" FunctionName="OPUBaseModel.Store.sp_Responsible_Del" />
+    <FunctionImportMapping FunctionImportName="sp_Responsible_List" FunctionName="OPUBaseModel.Store.sp_Responsible_List">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OPUBaseModel.sp_Responsible_List_Result">
+          <ScalarProperty Name="WorkCode" ColumnName="WorkCode" />
+          <ScalarProperty Name="WorkName" ColumnName="WorkName" />
+          <ScalarProperty Name="WorkProf" ColumnName="WorkProf" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SaveCorrespond" FunctionName="OPUBaseModel.Store.sp_SaveCorrespond" />
+    <FunctionImportMapping FunctionImportName="sp_SaveUser" FunctionName="OPUBaseModel.Store.sp_SaveUser" />
+    <FunctionImportMapping FunctionImportName="sp_Test" FunctionName="OPUBaseModel.Store.sp_Test">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OPUBaseModel.sp_Test_Result">
+          <ScalarProperty Name="DocBrief" ColumnName="DocBrief" />
+          <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+          <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+          <ScalarProperty Name="DocCode" ColumnName="DocCode" />
+          <ScalarProperty Name="DocBriefContents" ColumnName="DocBriefContents" />
+          <ScalarProperty Name="DocID" ColumnName="DocID" />
+          <ScalarProperty Name="Control" ColumnName="Control" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Adresat" ColumnName="Adresat" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="OPUBaseModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_ViewRespondEventLog" FunctionName="OPUBaseModel.Store.sp_ViewRespondEventLog" />
+    <FunctionImportMapping FunctionImportName="sys_ProgPermission" FunctionName="OPUBaseModel.Store.sys_ProgPermission" />
+  </EntityContainerMapping>
+</Mapping>

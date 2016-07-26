@@ -1,0 +1,17 @@
+E:\OPUBase\OPU\OPU\OPU\bin\Release\OPU.exe.config
+E:\OPUBase\OPU\OPU\OPU\bin\Release\OPU.exe
+E:\OPUBase\OPU\OPU\OPU\bin\Release\OPU.pdb
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.Properties.Resources.resources
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.csproj.GenerateResource.Cache
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.exe
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.pdb
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.csprojResolveAssemblyReference.cache
+E:\OPUBase\OPU\OPU\OPU\bin\Release\EntityFramework.dll
+E:\OPUBase\OPU\OPU\OPU\bin\Release\EntityFramework.SqlServer.dll
+E:\OPUBase\OPU\OPU\OPU\bin\Release\EntityFramework.xml
+E:\OPUBase\OPU\OPU\OPU\bin\Release\EntityFramework.SqlServer.xml
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.MainFrm.resources
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.DocumentsFrm.resources
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.CorrespondFrm.resources
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.UserLogin.resources
+E:\OPUBase\OPU\OPU\OPU\obj\Release\OPU.AddUserCompanyExecut.resources

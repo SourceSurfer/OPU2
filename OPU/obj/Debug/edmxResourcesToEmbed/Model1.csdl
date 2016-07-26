@@ -1,0 +1,1130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OPUBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AddressList">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryID" Type="Int16" />
+    <Property Name="IsAltName" Type="Byte" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="www" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CountriesList" Relationship="Self.FK_AddressList_CountriesList" FromRole="AddressList" ToRole="CountriesList" />
+  </EntityType>
+  <EntityType Name="CardList">
+    <Key>
+      <PropertyRef Name="CardNo" />
+    </Key>
+    <Property Name="CardNo" Type="Int32" Nullable="false" />
+    <Property Name="DocID" Type="Int32" />
+    <Property Name="ControlCode" Type="Int32" />
+    <Property Name="WorkCode" Type="Int32" />
+    <Property Name="WorkContents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PunktNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="WorkEndDate" Type="DateTime" Precision="3" />
+    <Property Name="StateCode" Type="Byte" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StateCodeUser" Type="Byte" />
+    <Property Name="ArgumentEnd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CardState" Relationship="Self.FK_CardList_CardState" FromRole="CardList" ToRole="CardState" />
+    <NavigationProperty Name="CardState1" Relationship="Self.FK_CardList_CardState1" FromRole="CardList" ToRole="CardState" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_CardList_DocList1" FromRole="CardList" ToRole="DocList" />
+    <NavigationProperty Name="WorkList" Relationship="Self.FK_CardList_WorkList" FromRole="CardList" ToRole="WorkList" />
+    <NavigationProperty Name="WorkList1" Relationship="Self.FK_CardList_WorkList1" FromRole="CardList" ToRole="WorkList" />
+  </EntityType>
+  <EntityType Name="CardState">
+    <Key>
+      <PropertyRef Name="StateCode" />
+    </Key>
+    <Property Name="StateCode" Type="Byte" Nullable="false" />
+    <Property Name="statename" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CardList" Relationship="Self.FK_CardList_CardState" FromRole="CardState" ToRole="CardList" />
+    <NavigationProperty Name="CardList1" Relationship="Self.FK_CardList_CardState1" FromRole="CardState" ToRole="CardList" />
+  </EntityType>
+  <EntityType Name="CompaniesList">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyShortName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Arhive_date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="CompleteList">
+    <Key>
+      <PropertyRef Name="Complete" />
+    </Key>
+    <Property Name="Complete" Type="Int32" Nullable="false" />
+    <Property Name="CompleteName" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_DocList_CompleteList" FromRole="CompleteList" ToRole="DocList" />
+  </EntityType>
+  <EntityType Name="ContactsList">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int16" />
+    <Property Name="IsAltName" Type="Byte" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="www" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Arhive_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="CountriesList" Relationship="Self.FK_ContactsList_CountriesList" FromRole="ContactsList" ToRole="CountriesList" />
+  </EntityType>
+  <EntityType Name="CountriesList">
+    <Key>
+      <PropertyRef Name="CountryID" />
+      <PropertyRef Name="IsAltName" />
+    </Key>
+    <Property Name="CountryID" Type="Int16" Nullable="false" />
+    <Property Name="IsAltName" Type="Byte" Nullable="false" />
+    <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Alpha2" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Alpha3" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AddressList" Relationship="Self.FK_AddressList_CountriesList" FromRole="CountriesList" ToRole="AddressList" />
+    <NavigationProperty Name="ContactsList" Relationship="Self.FK_ContactsList_CountriesList" FromRole="CountriesList" ToRole="ContactsList" />
+  </EntityType>
+  <EntityType Name="DivGroups2">
+    <Key>
+      <PropertyRef Name="DivID" />
+      <PropertyRef Name="GroupID" />
+    </Key>
+    <Property Name="DivID" Type="Int32" Nullable="false" />
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Divisions" Relationship="Self.FK_DivGroups_Divisions" FromRole="DivGroups2" ToRole="Divisions" />
+    <NavigationProperty Name="Groups" Relationship="Self.FK_DivGroups_Groups" FromRole="DivGroups2" ToRole="Groups" />
+    <NavigationProperty Name="ElDocUsersAdv" Relationship="Self.DivGroupUsers2" FromRole="DivGroups2" ToRole="ElDocUsersAdv" />
+  </EntityType>
+  <EntityType Name="DivGroupUsers">
+    <Key>
+      <PropertyRef Name="GroupID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ElDocUsersAdv" Relationship="Self.FK_DivGroupUsers_ElDocUsersAdv1" FromRole="DivGroupUsers" ToRole="ElDocUsersAdv" />
+  </EntityType>
+  <EntityType Name="Divisions">
+    <Key>
+      <PropertyRef Name="DivID" />
+    </Key>
+    <Property Name="DivID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DivName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DivMask" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="DivGroups2" Relationship="Self.FK_DivGroups_Divisions" FromRole="Divisions" ToRole="DivGroups2" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_DocList_Divisions" FromRole="Divisions" ToRole="DocList" />
+  </EntityType>
+  <EntityType Name="DocContactsList">
+    <Key>
+      <PropertyRef Name="DocID" />
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="DocID" Type="Int32" Nullable="false" />
+    <Property Name="ContactID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocControl">
+    <Key>
+      <PropertyRef Name="DocControlID" />
+    </Key>
+    <Property Name="DocControlID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocID" Type="Int32" Nullable="false" />
+    <Property Name="WorkCode" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_DocControl_Doc" FromRole="DocControl" ToRole="DocList" />
+    <NavigationProperty Name="WorkList" Relationship="Self.FK_DocControl_Work" FromRole="DocControl" ToRole="WorkList" />
+  </EntityType>
+  <EntityType Name="DocList">
+    <Key>
+      <PropertyRef Name="DocID" />
+    </Key>
+    <Property Name="DocID" Type="Int32" Nullable="false" />
+    <Property Name="DocCode" Type="Byte" />
+    <Property Name="DivID" Type="Int32" />
+    <Property Name="DocBrief" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DocBriefContents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DocDate" Type="DateTime" Precision="3" />
+    <Property Name="DocNo" Type="Int32" />
+    <Property Name="Prefix" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Control" Type="Boolean" />
+    <Property Name="Adresat" Type="Int32" />
+    <Property Name="Complete" Type="Int32" />
+    <Property Name="DocExecutor" Type="Int32" />
+    <NavigationProperty Name="CardList" Relationship="Self.FK_CardList_DocList1" FromRole="DocList" ToRole="CardList" />
+    <NavigationProperty Name="CompleteList" Relationship="Self.FK_DocList_CompleteList" FromRole="DocList" ToRole="CompleteList" />
+    <NavigationProperty Name="Divisions" Relationship="Self.FK_DocList_Divisions" FromRole="DocList" ToRole="Divisions" />
+    <NavigationProperty Name="DocControl" Relationship="Self.FK_DocControl_Doc" FromRole="DocList" ToRole="DocControl" />
+    <NavigationProperty Name="WorkList" Relationship="Self.FK_DocExecutor" FromRole="DocList" ToRole="WorkList" />
+    <NavigationProperty Name="DocType" Relationship="Self.FK_DocList_DocType" FromRole="DocList" ToRole="DocType" />
+    <NavigationProperty Name="WorkList1" Relationship="Self.FK_DocList_WorkList" FromRole="DocList" ToRole="WorkList" />
+    <NavigationProperty Name="DocListSecurityAdv" Relationship="Self.FK_DocListSecurityAdv_DocList" FromRole="DocList" ToRole="DocListSecurityAdv" />
+    <NavigationProperty Name="ElectronDocList" Relationship="Self.FK_ElectronDocList_DocList" FromRole="DocList" ToRole="ElectronDocList" />
+    <NavigationProperty Name="EventLog" Relationship="Self.FK_EventLog_DocList" FromRole="DocList" ToRole="EventLog" />
+    <NavigationProperty Name="RelationsDoc" Relationship="Self.FK_RelationsDoc_Doc" FromRole="DocList" ToRole="RelationsDoc" />
+    <NavigationProperty Name="RelationsDoc1" Relationship="Self.FK_RelationsDoc_OwnerDoc" FromRole="DocList" ToRole="RelationsDoc" />
+    <NavigationProperty Name="ResponsiblesList" Relationship="Self.FK_ResponsiblesList_DocList" FromRole="DocList" ToRole="ResponsiblesList" />
+  </EntityType>
+  <EntityType Name="DocListSecurityAdv">
+    <Key>
+      <PropertyRef Name="SecurityID" />
+    </Key>
+    <Property Name="SecurityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocID" Type="Int32" Nullable="false" />
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="GroupType" Type="Byte" Nullable="false" />
+    <Property Name="AccessMask" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_DocListSecurityAdv_DocList" FromRole="DocListSecurityAdv" ToRole="DocList" />
+  </EntityType>
+  <EntityType Name="DocType">
+    <Key>
+      <PropertyRef Name="DocCode" />
+    </Key>
+    <Property Name="DocCode" Type="Byte" Nullable="false" />
+    <Property Name="DocName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_DocList_DocType" FromRole="DocType" ToRole="DocList" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="Int32" />
+    <Property Name="property" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+    <Property Name="uvalue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ElDocUsersAdv">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkCode" Type="Int32" Nullable="false" />
+    <Property Name="UserLogin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserPassWord" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DivGroupUsers" Relationship="Self.FK_DivGroupUsers_ElDocUsersAdv1" FromRole="ElDocUsersAdv" ToRole="DivGroupUsers" />
+    <NavigationProperty Name="WorkList" Relationship="Self.FK_ElDocUsersAdv_WorkList" FromRole="ElDocUsersAdv" ToRole="WorkList" />
+    <NavigationProperty Name="EventLog" Relationship="Self.FK_EventLog_ElDocUsersAdv" FromRole="ElDocUsersAdv" ToRole="EventLog" />
+    <NavigationProperty Name="DivGroups2" Relationship="Self.DivGroupUsers2" FromRole="ElDocUsersAdv" ToRole="DivGroups2" />
+  </EntityType>
+  <EntityType Name="ElectronDocList">
+    <Key>
+      <PropertyRef Name="DocID" />
+    </Key>
+    <Property Name="DocID" Type="Int32" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="Document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FileDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_ElectronDocList_DocList" FromRole="ElectronDocList" ToRole="DocList" />
+  </EntityType>
+  <EntityType Name="EventLog">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventTypeCode" Type="Byte" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="UserLogin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DocID" Type="Int32" />
+    <Property Name="ComputerName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="EventMoment" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_EventLog_DocList" FromRole="EventLog" ToRole="DocList" />
+    <NavigationProperty Name="ElDocUsersAdv" Relationship="Self.FK_EventLog_ElDocUsersAdv" FromRole="EventLog" ToRole="ElDocUsersAdv" />
+    <NavigationProperty Name="EventTypes" Relationship="Self.FK_EventLog_EventTypes" FromRole="EventLog" ToRole="EventTypes" />
+  </EntityType>
+  <EntityType Name="EventTypes">
+    <Key>
+      <PropertyRef Name="EventTypeCode" />
+    </Key>
+    <Property Name="EventTypeCode" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventTypeDescr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EventLog" Relationship="Self.FK_EventLog_EventTypes" FromRole="EventTypes" ToRole="EventLog" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="GroupID" />
+    </Key>
+    <Property Name="GroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsAdmin" Type="Boolean" />
+    <Property Name="DivID" Type="Int32" />
+    <NavigationProperty Name="DivGroups2" Relationship="Self.FK_DivGroups_Groups" FromRole="Groups" ToRole="DivGroups2" />
+  </EntityType>
+  <EntityType Name="MailList">
+    <Key>
+      <PropertyRef Name="DocID" />
+    </Key>
+    <Property Name="DocID" Type="Int32" Nullable="false" />
+    <Property Name="DeliveryTypeID" Type="Int32" />
+    <Property Name="CorrNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CorrDate" Type="DateTime" Precision="3" />
+    <Property Name="Note" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RelationsDoc">
+    <Key>
+      <PropertyRef Name="Relation_ID" />
+    </Key>
+    <Property Name="Relation_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocID" Type="Int32" Nullable="false" />
+    <Property Name="OwnerDocID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_RelationsDoc_Doc" FromRole="RelationsDoc" ToRole="DocList" />
+    <NavigationProperty Name="DocList1" Relationship="Self.FK_RelationsDoc_OwnerDoc" FromRole="RelationsDoc" ToRole="DocList" />
+  </EntityType>
+  <EntityType Name="Replace">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkCode" Type="Int32" />
+    <Property Name="Code" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ResponsiblesList">
+    <Key>
+      <PropertyRef Name="Respond_ID" />
+    </Key>
+    <Property Name="Respond_ID" Type="Int32" Nullable="false" />
+    <Property Name="DocID" Type="Int32" Nullable="false" />
+    <Property Name="WorkCode" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_ResponsiblesList_DocList" FromRole="ResponsiblesList" ToRole="DocList" />
+    <NavigationProperty Name="WorkList" Relationship="Self.FK_ResponsiblesList_WorkList" FromRole="ResponsiblesList" ToRole="WorkList" />
+  </EntityType>
+  <EntityType Name="sys_ProgLinkHost">
+    <Key>
+      <PropertyRef Name="id_Link" />
+    </Key>
+    <Property Name="id_Link" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Prog" Type="Int32" />
+    <Property Name="cHost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dataIns" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sys_ProgList">
+    <Key>
+      <PropertyRef Name="id_Prog" />
+    </Key>
+    <Property Name="id_Prog" Type="Int32" Nullable="false" />
+    <Property Name="ProgExe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ProgVer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProgName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dataIns" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="WorkList">
+    <Key>
+      <PropertyRef Name="WorkCode" />
+    </Key>
+    <Property Name="WorkCode" Type="Int32" Nullable="false" />
+    <Property Name="WorkName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RangeOrder" Type="Int32" />
+    <Property Name="WorkState" Type="Boolean" />
+    <Property Name="WorkProf" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CardList" Relationship="Self.FK_CardList_WorkList" FromRole="WorkList" ToRole="CardList" />
+    <NavigationProperty Name="CardList1" Relationship="Self.FK_CardList_WorkList1" FromRole="WorkList" ToRole="CardList" />
+    <NavigationProperty Name="DocControl" Relationship="Self.FK_DocControl_Work" FromRole="WorkList" ToRole="DocControl" />
+    <NavigationProperty Name="DocList" Relationship="Self.FK_DocExecutor" FromRole="WorkList" ToRole="DocList" />
+    <NavigationProperty Name="DocList1" Relationship="Self.FK_DocList_WorkList" FromRole="WorkList" ToRole="DocList" />
+    <NavigationProperty Name="ElDocUsersAdv" Relationship="Self.FK_ElDocUsersAdv_WorkList" FromRole="WorkList" ToRole="ElDocUsersAdv" />
+    <NavigationProperty Name="ResponsiblesList" Relationship="Self.FK_ResponsiblesList_WorkList" FromRole="WorkList" ToRole="ResponsiblesList" />
+  </EntityType>
+  <EntityType Name="sys_ProgLinkRole">
+    <Key>
+      <PropertyRef Name="id_Link" />
+    </Key>
+    <Property Name="id_Link" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_Prog" Type="Int32" />
+    <Property Name="cRole" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nLevel" Type="Int16" />
+    <Property Name="dataIns" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sys_ProgStartLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userStart" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProgExe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nLevel" Type="Int16" />
+    <Property Name="host" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dateStart" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_AddressList_CountriesList">
+    <End Role="CountriesList" Type="Self.CountriesList" Multiplicity="0..1" />
+    <End Role="AddressList" Type="Self.AddressList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountriesList">
+        <PropertyRef Name="CountryID" />
+        <PropertyRef Name="IsAltName" />
+      </Principal>
+      <Dependent Role="AddressList">
+        <PropertyRef Name="CountryID" />
+        <PropertyRef Name="IsAltName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CardList_CardState">
+    <End Role="CardState" Type="Self.CardState" Multiplicity="0..1" />
+    <End Role="CardList" Type="Self.CardList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CardState">
+        <PropertyRef Name="StateCode" />
+      </Principal>
+      <Dependent Role="CardList">
+        <PropertyRef Name="StateCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CardList_CardState1">
+    <End Role="CardState" Type="Self.CardState" Multiplicity="0..1" />
+    <End Role="CardList" Type="Self.CardList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CardState">
+        <PropertyRef Name="StateCode" />
+      </Principal>
+      <Dependent Role="CardList">
+        <PropertyRef Name="StateCodeUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CardList_DocList1">
+    <End Role="DocList" Type="Self.DocList" Multiplicity="0..1" />
+    <End Role="CardList" Type="Self.CardList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocList">
+        <PropertyRef Name="DocID" />
+      </Principal>
+      <Dependent Role="CardList">
+        <PropertyRef Name="DocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CardList_WorkList">
+    <End Role="WorkList" Type="Self.WorkList" Multiplicity="0..1" />
+    <End Role="CardList" Type="Self.CardList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkList">
+        <PropertyRef Name="WorkCode" />
+      </Principal>
+      <Dependent Role="CardList">
+        <PropertyRef Name="ControlCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CardList_WorkList1">
+    <End Role="WorkList" Type="Self.WorkList" Multiplicity="0..1" />
+    <End Role="CardList" Type="Self.CardList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkList">
+        <PropertyRef Name="WorkCode" />
+      </Principal>
+      <Dependent Role="CardList">
+        <PropertyRef Name="WorkCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocList_CompleteList">
+    <End Role="CompleteList" Type="Self.CompleteList" Multiplicity="0..1" />
+    <End Role="DocList" Type="Self.DocList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompleteList">
+        <PropertyRef Name="Complete" />
+      </Principal>
+      <Dependent Role="DocList">
+        <PropertyRef Name="Complete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactsList_CountriesList">
+    <End Role="CountriesList" Type="Self.CountriesList" Multiplicity="0..1" />
+    <End Role="ContactsList" Type="Self.ContactsList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountriesList">
+        <PropertyRef Name="CountryID" />
+        <PropertyRef Name="IsAltName" />
+      </Principal>
+      <Dependent Role="ContactsList">
+        <PropertyRef Name="CountryID" />
+        <PropertyRef Name="IsAltName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DivGroups_Divisions">
+    <End Role="Divisions" Type="Self.Divisions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DivGroups2" Type="Self.DivGroups2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisions">
+        <PropertyRef Name="DivID" />
+      </Principal>
+      <Dependent Role="DivGroups2">
+        <PropertyRef Name="DivID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DivGroups_Groups">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DivGroups2" Type="Self.DivGroups2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="GroupID" />
+      </Principal>
+      <Dependent Role="DivGroups2">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DivGroupUsers_ElDocUsersAdv1">
+    <End Role="ElDocUsersAdv" Type="Self.ElDocUsersAdv" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DivGroupUsers" Type="Self.DivGroupUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElDocUsersAdv">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="DivGroupUsers">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocList_Divisions">
+    <End Role="Divisions" Type="Self.Divisions" Multiplicity="0..1" />
+    <End Role="DocList" Type="Self.DocList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Divisions">
+        <PropertyRef Name="DivID" />
+      </Principal>
+      <Dependent Role="DocList">
+        <PropertyRef Name="DivID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocControl_Doc">
+    <End Role="DocList" Type="Self.DocList" Multiplicity="1" />
+    <End Role="DocControl" Type="Self.DocControl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocList">
+        <PropertyRef Name="DocID" />
+      </Principal>
+      <Dependent Role="DocControl">
+        <PropertyRef Name="DocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocControl_Work">
+    <End Role="WorkList" Type="Self.WorkList" Multiplicity="1" />
+    <End Role="DocControl" Type="Self.DocControl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkList">
+        <PropertyRef Name="WorkCode" />
+      </Principal>
+      <Dependent Role="DocControl">
+        <PropertyRef Name="WorkCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocExecutor">
+    <End Role="WorkList" Type="Self.WorkList" Multiplicity="0..1" />
+    <End Role="DocList" Type="Self.DocList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkList">
+        <PropertyRef Name="WorkCode" />
+      </Principal>
+      <Dependent Role="DocList">
+        <PropertyRef Name="DocExecutor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocList_DocType">
+    <End Role="DocType" Type="Self.DocType" Multiplicity="0..1" />
+    <End Role="DocList" Type="Self.DocList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocType">
+        <PropertyRef Name="DocCode" />
+      </Principal>
+      <Dependent Role="DocList">
+        <PropertyRef Name="DocCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocList_WorkList">
+    <End Role="WorkList" Type="Self.WorkList" Multiplicity="0..1" />
+    <End Role="DocList" Type="Self.DocList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkList">
+        <PropertyRef Name="WorkCode" />
+      </Principal>
+      <Dependent Role="DocList">
+        <PropertyRef Name="Adresat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocListSecurityAdv_DocList">
+    <End Role="DocList" Type="Self.DocList" Multiplicity="1" />
+    <End Role="DocListSecurityAdv" Type="Self.DocListSecurityAdv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocList">
+        <PropertyRef Name="DocID" />
+      </Principal>
+      <Dependent Role="DocListSecurityAdv">
+        <PropertyRef Name="DocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ElectronDocList_DocList">
+    <End Role="DocList" Type="Self.DocList" Multiplicity="1" />
+    <End Role="ElectronDocList" Type="Self.ElectronDocList" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DocList">
+        <PropertyRef Name="DocID" />
+      </Principal>
+      <Dependent Role="ElectronDocList">
+        <PropertyRef Name="DocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventLog_DocList">
+    <End Role="DocList" Type="Self.DocList" Multiplicity="0..1" />
+    <End Role="EventLog" Type="Self.EventLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocList">
+        <PropertyRef Name="DocID" />
+      </Principal>
+      <Dependent Role="EventLog">
+        <PropertyRef Name="DocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RelationsDoc_Doc">
+    <End Role="DocList" Type="Self.DocList" Multiplicity="1" />
+    <End Role="RelationsDoc" Type="Self.RelationsDoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocList">
+        <PropertyRef Name="DocID" />
+      </Principal>
+      <Dependent Role="RelationsDoc">
+        <PropertyRef Name="DocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RelationsDoc_OwnerDoc">
+    <End Role="DocList" Type="Self.DocList" Multiplicity="1" />
+    <End Role="RelationsDoc" Type="Self.RelationsDoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocList">
+        <PropertyRef Name="DocID" />
+      </Principal>
+      <Dependent Role="RelationsDoc">
+        <PropertyRef Name="OwnerDocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResponsiblesList_DocList">
+    <End Role="DocList" Type="Self.DocList" Multiplicity="1" />
+    <End Role="ResponsiblesList" Type="Self.ResponsiblesList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocList">
+        <PropertyRef Name="DocID" />
+      </Principal>
+      <Dependent Role="ResponsiblesList">
+        <PropertyRef Name="DocID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ElDocUsersAdv_WorkList">
+    <End Role="WorkList" Type="Self.WorkList" Multiplicity="1" />
+    <End Role="ElDocUsersAdv" Type="Self.ElDocUsersAdv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkList">
+        <PropertyRef Name="WorkCode" />
+      </Principal>
+      <Dependent Role="ElDocUsersAdv">
+        <PropertyRef Name="WorkCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventLog_ElDocUsersAdv">
+    <End Role="ElDocUsersAdv" Type="Self.ElDocUsersAdv" Multiplicity="0..1" />
+    <End Role="EventLog" Type="Self.EventLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElDocUsersAdv">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="EventLog">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventLog_EventTypes">
+    <End Role="EventTypes" Type="Self.EventTypes" Multiplicity="0..1" />
+    <End Role="EventLog" Type="Self.EventLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventTypes">
+        <PropertyRef Name="EventTypeCode" />
+      </Principal>
+      <Dependent Role="EventLog">
+        <PropertyRef Name="EventTypeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResponsiblesList_WorkList">
+    <End Role="WorkList" Type="Self.WorkList" Multiplicity="1" />
+    <End Role="ResponsiblesList" Type="Self.ResponsiblesList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkList">
+        <PropertyRef Name="WorkCode" />
+      </Principal>
+      <Dependent Role="ResponsiblesList">
+        <PropertyRef Name="WorkCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DivGroupUsers2">
+    <End Role="DivGroups2" Type="Self.DivGroups2" Multiplicity="*" />
+    <End Role="ElDocUsersAdv" Type="Self.ElDocUsersAdv" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="OPUBaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AddressList" EntityType="Self.AddressList" />
+    <EntitySet Name="CardList" EntityType="Self.CardList" />
+    <EntitySet Name="CardState" EntityType="Self.CardState" />
+    <EntitySet Name="CompaniesList" EntityType="Self.CompaniesList" />
+    <EntitySet Name="CompleteList" EntityType="Self.CompleteList" />
+    <EntitySet Name="ContactsList" EntityType="Self.ContactsList" />
+    <EntitySet Name="CountriesList" EntityType="Self.CountriesList" />
+    <EntitySet Name="DivGroups2" EntityType="Self.DivGroups2" />
+    <EntitySet Name="DivGroupUsers" EntityType="Self.DivGroupUsers" />
+    <EntitySet Name="Divisions" EntityType="Self.Divisions" />
+    <EntitySet Name="DocContactsList" EntityType="Self.DocContactsList" />
+    <EntitySet Name="DocControl" EntityType="Self.DocControl" />
+    <EntitySet Name="DocList" EntityType="Self.DocList" />
+    <EntitySet Name="DocListSecurityAdv" EntityType="Self.DocListSecurityAdv" />
+    <EntitySet Name="DocType" EntityType="Self.DocType" />
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" />
+    <EntitySet Name="ElDocUsersAdv" EntityType="Self.ElDocUsersAdv" />
+    <EntitySet Name="ElectronDocList" EntityType="Self.ElectronDocList" />
+    <EntitySet Name="EventLog" EntityType="Self.EventLog" />
+    <EntitySet Name="EventTypes" EntityType="Self.EventTypes" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" />
+    <EntitySet Name="MailList" EntityType="Self.MailList" />
+    <EntitySet Name="RelationsDoc" EntityType="Self.RelationsDoc" />
+    <EntitySet Name="Replace" EntityType="Self.Replace" />
+    <EntitySet Name="ResponsiblesList" EntityType="Self.ResponsiblesList" />
+    <EntitySet Name="sys_ProgLinkHost" EntityType="Self.sys_ProgLinkHost" />
+    <EntitySet Name="sys_ProgList" EntityType="Self.sys_ProgList" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="WorkList" EntityType="Self.WorkList" />
+    <EntitySet Name="sys_ProgLinkRole" EntityType="Self.sys_ProgLinkRole" />
+    <EntitySet Name="sys_ProgStartLog" EntityType="Self.sys_ProgStartLog" />
+    <AssociationSet Name="FK_AddressList_CountriesList" Association="Self.FK_AddressList_CountriesList">
+      <End Role="CountriesList" EntitySet="CountriesList" />
+      <End Role="AddressList" EntitySet="AddressList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CardList_CardState" Association="Self.FK_CardList_CardState">
+      <End Role="CardState" EntitySet="CardState" />
+      <End Role="CardList" EntitySet="CardList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CardList_CardState1" Association="Self.FK_CardList_CardState1">
+      <End Role="CardState" EntitySet="CardState" />
+      <End Role="CardList" EntitySet="CardList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CardList_DocList1" Association="Self.FK_CardList_DocList1">
+      <End Role="DocList" EntitySet="DocList" />
+      <End Role="CardList" EntitySet="CardList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CardList_WorkList" Association="Self.FK_CardList_WorkList">
+      <End Role="WorkList" EntitySet="WorkList" />
+      <End Role="CardList" EntitySet="CardList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CardList_WorkList1" Association="Self.FK_CardList_WorkList1">
+      <End Role="WorkList" EntitySet="WorkList" />
+      <End Role="CardList" EntitySet="CardList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocList_CompleteList" Association="Self.FK_DocList_CompleteList">
+      <End Role="CompleteList" EntitySet="CompleteList" />
+      <End Role="DocList" EntitySet="DocList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactsList_CountriesList" Association="Self.FK_ContactsList_CountriesList">
+      <End Role="CountriesList" EntitySet="CountriesList" />
+      <End Role="ContactsList" EntitySet="ContactsList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DivGroups_Divisions" Association="Self.FK_DivGroups_Divisions">
+      <End Role="Divisions" EntitySet="Divisions" />
+      <End Role="DivGroups2" EntitySet="DivGroups2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DivGroups_Groups" Association="Self.FK_DivGroups_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="DivGroups2" EntitySet="DivGroups2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DivGroupUsers_ElDocUsersAdv1" Association="Self.FK_DivGroupUsers_ElDocUsersAdv1">
+      <End Role="ElDocUsersAdv" EntitySet="ElDocUsersAdv" />
+      <End Role="DivGroupUsers" EntitySet="DivGroupUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocList_Divisions" Association="Self.FK_DocList_Divisions">
+      <End Role="Divisions" EntitySet="Divisions" />
+      <End Role="DocList" EntitySet="DocList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocControl_Doc" Association="Self.FK_DocControl_Doc">
+      <End Role="DocList" EntitySet="DocList" />
+      <End Role="DocControl" EntitySet="DocControl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocControl_Work" Association="Self.FK_DocControl_Work">
+      <End Role="WorkList" EntitySet="WorkList" />
+      <End Role="DocControl" EntitySet="DocControl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocExecutor" Association="Self.FK_DocExecutor">
+      <End Role="WorkList" EntitySet="WorkList" />
+      <End Role="DocList" EntitySet="DocList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocList_DocType" Association="Self.FK_DocList_DocType">
+      <End Role="DocType" EntitySet="DocType" />
+      <End Role="DocList" EntitySet="DocList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocList_WorkList" Association="Self.FK_DocList_WorkList">
+      <End Role="WorkList" EntitySet="WorkList" />
+      <End Role="DocList" EntitySet="DocList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocListSecurityAdv_DocList" Association="Self.FK_DocListSecurityAdv_DocList">
+      <End Role="DocList" EntitySet="DocList" />
+      <End Role="DocListSecurityAdv" EntitySet="DocListSecurityAdv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ElectronDocList_DocList" Association="Self.FK_ElectronDocList_DocList">
+      <End Role="DocList" EntitySet="DocList" />
+      <End Role="ElectronDocList" EntitySet="ElectronDocList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventLog_DocList" Association="Self.FK_EventLog_DocList">
+      <End Role="DocList" EntitySet="DocList" />
+      <End Role="EventLog" EntitySet="EventLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RelationsDoc_Doc" Association="Self.FK_RelationsDoc_Doc">
+      <End Role="DocList" EntitySet="DocList" />
+      <End Role="RelationsDoc" EntitySet="RelationsDoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RelationsDoc_OwnerDoc" Association="Self.FK_RelationsDoc_OwnerDoc">
+      <End Role="DocList" EntitySet="DocList" />
+      <End Role="RelationsDoc" EntitySet="RelationsDoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResponsiblesList_DocList" Association="Self.FK_ResponsiblesList_DocList">
+      <End Role="DocList" EntitySet="DocList" />
+      <End Role="ResponsiblesList" EntitySet="ResponsiblesList" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ElDocUsersAdv_WorkList" Association="Self.FK_ElDocUsersAdv_WorkList">
+      <End Role="WorkList" EntitySet="WorkList" />
+      <End Role="ElDocUsersAdv" EntitySet="ElDocUsersAdv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventLog_ElDocUsersAdv" Association="Self.FK_EventLog_ElDocUsersAdv">
+      <End Role="ElDocUsersAdv" EntitySet="ElDocUsersAdv" />
+      <End Role="EventLog" EntitySet="EventLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventLog_EventTypes" Association="Self.FK_EventLog_EventTypes">
+      <End Role="EventTypes" EntitySet="EventTypes" />
+      <End Role="EventLog" EntitySet="EventLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResponsiblesList_WorkList" Association="Self.FK_ResponsiblesList_WorkList">
+      <End Role="WorkList" EntitySet="WorkList" />
+      <End Role="ResponsiblesList" EntitySet="ResponsiblesList" />
+    </AssociationSet>
+    <AssociationSet Name="DivGroupUsers2" Association="Self.DivGroupUsers2">
+      <End Role="DivGroups2" EntitySet="DivGroups2" />
+      <End Role="ElDocUsersAdv" EntitySet="ElDocUsersAdv" />
+    </AssociationSet>
+    <FunctionImport Name="NEW_sp_Document_List_Access_Adv" ReturnType="Collection(OPUBaseModel.NEW_sp_Document_List_Access_Adv_Result)">
+      <Parameter Name="DCode" Mode="In" Type="Int32" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="AccessMask" Mode="In" Type="Int32" />
+      <Parameter Name="MinDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MaxDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Control" Mode="In" Type="Int32" />
+      <Parameter Name="Context" Mode="In" Type="String" />
+      <Parameter Name="ACode" Mode="In" Type="Int32" />
+      <Parameter Name="DocExecutor" Mode="In" Type="Int32" />
+      <Parameter Name="Respond" Mode="In" Type="Int32" />
+      <Parameter Name="Comple" Mode="In" Type="Int32" />
+      <Parameter Name="DNo" Mode="In" Type="Int32" />
+      <Parameter Name="DateOrder" Mode="In" Type="Int32" />
+      <Parameter Name="ContactID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DeleteRelationsDoc">
+      <Parameter Name="DocId" Mode="In" Type="Int32" />
+      <Parameter Name="OwnerDocId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Distribute_FullList" ReturnType="Collection(OPUBaseModel.sp_Distribute_FullList_Result)">
+      <Parameter Name="WorkCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Distribute_List" ReturnType="Collection(OPUBaseModel.sp_Distribute_List_Result)">
+      <Parameter Name="FIO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Doc_Access_User">
+      <Parameter Name="DocId" Mode="In" Type="Int32" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="AccessMask" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Doc_Add_Adv">
+      <Parameter Name="DCode" Mode="In" Type="Byte" />
+      <Parameter Name="DivID" Mode="In" Type="Int32" />
+      <Parameter Name="DBrief" Mode="In" Type="String" />
+      <Parameter Name="DBCont" Mode="In" Type="String" />
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="DNo" Mode="In" Type="Int32" />
+      <Parameter Name="Prefix" Mode="In" Type="String" />
+      <Parameter Name="Adresat" Mode="In" Type="Int32" />
+      <Parameter Name="ContactID" Mode="In" Type="Int32" />
+      <Parameter Name="Complete" Mode="In" Type="Int32" />
+      <Parameter Name="DocExecutor" Mode="In" Type="Int32" />
+      <Parameter Name="DeliveryTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="CorrNo" Mode="In" Type="String" />
+      <Parameter Name="CorrDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Note" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Doc_Edit">
+      <Parameter Name="id_doc" Mode="In" Type="Int32" />
+      <Parameter Name="DNo" Mode="In" Type="Int32" />
+      <Parameter Name="DBrief" Mode="In" Type="String" />
+      <Parameter Name="DBCont" Mode="In" Type="String" />
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="Prefix" Mode="In" Type="String" />
+      <Parameter Name="Adresat" Mode="In" Type="Int32" />
+      <Parameter Name="Complete" Mode="In" Type="Int32" />
+      <Parameter Name="ContactID" Mode="In" Type="Int32" />
+      <Parameter Name="DocExecutor" Mode="In" Type="Int32" />
+      <Parameter Name="DeliveryTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="CorrNo" Mode="In" Type="String" />
+      <Parameter Name="CorrDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Note" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Document_List_Access_Adv">
+      <Parameter Name="DCode" Mode="In" Type="Int32" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="AccessMask" Mode="In" Type="Int32" />
+      <Parameter Name="MinDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MaxDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Control" Mode="In" Type="Int32" />
+      <Parameter Name="Context" Mode="In" Type="String" />
+      <Parameter Name="ACode" Mode="In" Type="Int32" />
+      <Parameter Name="DocExecutor" Mode="In" Type="Int32" />
+      <Parameter Name="Respond" Mode="In" Type="Int32" />
+      <Parameter Name="Comple" Mode="In" Type="Int32" />
+      <Parameter Name="DNo" Mode="In" Type="Int32" />
+      <Parameter Name="DateOrder" Mode="In" Type="Int32" />
+      <Parameter Name="ContactID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Document_List_Access_Adv_">
+      <Parameter Name="DCode" Mode="In" Type="Int32" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="AccessMask" Mode="In" Type="Int32" />
+      <Parameter Name="MinDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MaxDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Control" Mode="In" Type="Int32" />
+      <Parameter Name="Context" Mode="In" Type="String" />
+      <Parameter Name="ACode" Mode="In" Type="Int32" />
+      <Parameter Name="DocExecutor" Mode="In" Type="Int32" />
+      <Parameter Name="Respond" Mode="In" Type="Int32" />
+      <Parameter Name="Comple" Mode="In" Type="Int32" />
+      <Parameter Name="DNo" Mode="In" Type="Int32" />
+      <Parameter Name="DateOrder" Mode="In" Type="Int32" />
+      <Parameter Name="ContactID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(OPUBaseModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(OPUBaseModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertRelationsDoc">
+      <Parameter Name="DocId" Mode="In" Type="Int32" />
+      <Parameter Name="OwnerDocId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Remember" ReturnType="Collection(OPUBaseModel.sp_Remember_Result)">
+      <Parameter Name="WorkCode" Mode="In" Type="Int32" />
+      <Parameter Name="MinDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MaxDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Remember2" ReturnType="Collection(OPUBaseModel.sp_Remember2_Result)">
+      <Parameter Name="WorkCode" Mode="In" Type="Int32" />
+      <Parameter Name="WorkCodeAlt" Mode="In" Type="Int32" />
+      <Parameter Name="MinDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MaxDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Responsible_Add">
+      <Parameter Name="id_doc" Mode="In" Type="Int32" />
+      <Parameter Name="id_work" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Responsible_Del">
+      <Parameter Name="id_respond" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Responsible_List" ReturnType="Collection(OPUBaseModel.sp_Responsible_List_Result)">
+      <Parameter Name="id_doc" Mode="In" Type="Int32" />
+      <Parameter Name="sname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SaveCorrespond" ReturnType="Collection(Int32)">
+      <Parameter Name="ContactID" Mode="In" Type="Int32" />
+      <Parameter Name="companyID" Mode="In" Type="Int32" />
+      <Parameter Name="lastName" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="FatherName" Mode="In" Type="String" />
+      <Parameter Name="post" Mode="In" Type="String" />
+      <Parameter Name="CompanyShortName" Mode="In" Type="String" />
+      <Parameter Name="AddNew" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SaveUser">
+      <Parameter Name="WorkCode" Mode="In" Type="Int32" />
+      <Parameter Name="UserLogin" Mode="In" Type="String" />
+      <Parameter Name="UserPassWord" Mode="In" Type="String" />
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Test" ReturnType="Collection(OPUBaseModel.sp_Test_Result)">
+      <Parameter Name="MinDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MaxDate" Mode="In" Type="DateTime" />
+      <Parameter Name="DocNo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="sp_ViewRespondEventLog">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="DocCode" Mode="In" Type="Int32" />
+      <Parameter Name="DocNo" Mode="In" Type="Int32" />
+      <Parameter Name="DocBriefContents" Mode="In" Type="String" />
+      <Parameter Name="MinDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MaxDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sys_ProgPermission" ReturnType="Collection(Int32)">
+      <Parameter Name="pVer" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="NEW_sp_Document_List_Access_Adv_Result">
+    <Property Type="String" Name="DocBrief" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="DocNo" Nullable="true" />
+    <Property Type="DateTime" Name="DocDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="DocCode" Nullable="true" />
+    <Property Type="String" Name="DocBriefContents" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="DocID" Nullable="false" />
+    <Property Type="Boolean" Name="Control" Nullable="true" />
+    <Property Type="String" Name="Prefix" Nullable="true" MaxLength="3" />
+    <Property Type="Int32" Name="Adresat" Nullable="true" />
+    <Property Type="String" Name="WorkName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="DocExecutor" Nullable="true" />
+    <Property Type="String" Name="Executor" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompleteName" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Complete" Nullable="true" />
+    <Property Type="String" Name="ElDocFileName" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="ElDocExists" Nullable="false" MaxLength="7" />
+    <Property Type="String" Name="CardExists" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="ContactName" Nullable="true" MaxLength="55" />
+    <Property Type="String" Name="DeliveryType" Nullable="true" MaxLength="23" />
+    <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="DivID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Distribute_FullList_Result">
+    <Property Type="String" Name="DocBrief" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="DocBriefContents" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="sp_Distribute_List_Result">
+    <Property Type="Int32" Name="WorkCode" Nullable="false" />
+    <Property Type="String" Name="WorkName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="RangeOrder" Nullable="true" />
+    <Property Type="Boolean" Name="WorkState" Nullable="true" />
+    <Property Type="String" Name="WorkProf" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_Remember_Result">
+    <Property Type="Int32" Name="CardNo" Nullable="false" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="WorkName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Controller" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="WorkEndDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Report" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ArgumentEnd" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="WorkContents" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="DocBrief" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="DocBriefContents" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="DocID" Nullable="true" />
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="sp_Remember2_Result">
+    <Property Type="Int32" Name="CardNo" Nullable="false" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="WorkName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Controller" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="WorkEndDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Report" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ArgumentEnd" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="WorkContents" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="DocBrief" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="DocBriefContents" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="DocID" Nullable="true" />
+    <Property Type="String" Name="FileName" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="sp_Responsible_List_Result">
+    <Property Type="Int32" Name="WorkCode" Nullable="false" />
+    <Property Type="String" Name="WorkName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WorkProf" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_Test_Result">
+    <Property Type="String" Name="DocBrief" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="DocNo" Nullable="true" />
+    <Property Type="DateTime" Name="DocDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="DocCode" Nullable="true" />
+    <Property Type="String" Name="DocBriefContents" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="DocID" Nullable="false" />
+    <Property Type="Boolean" Name="Control" Nullable="true" />
+    <Property Type="String" Name="Prefix" Nullable="true" MaxLength="3" />
+    <Property Type="Int32" Name="Adresat" Nullable="true" />
+  </ComplexType>
+</Schema>
