@@ -32,6 +32,8 @@ namespace OPU
                                  " where  (DATEADD(MM,-12,GETDATE()) < DocDate ) and (DivID = {0} )";
             
 
+
+
         }
 
 
