@@ -31,9 +31,6 @@ namespace OPU
             protected internal const string sqlLoadDB2 = " select distinct h.DocCode, dt.DocName from DocList h  left join DocType dt on dt.DocCode = h.DocCode " +
                                  " where  (DATEADD(MM,-12,GETDATE()) < DocDate ) and (DivID = {0} )";
             
-
-
-
         }
 
 
